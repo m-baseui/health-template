@@ -37,43 +37,51 @@ export const constantRoutes = [
         path: 'dashboard',
         name: 'Dashboard',
         component: () => import('@/views/dashboard/index.vue'),
-        //using el svg icon, the elSvgIcon first when at the same time using elSvgIcon and icon
-        meta: { title: 'Dashboard', elSvgIcon: 'Fold' }
+        meta: { title: '首页', icon: 'shouye' }
       }
     ]
   },
   {
-    path: '/writing-demo',
+    path: '/',
     component: Layout,
-    meta: { title: 'Writing Demo', icon: 'eye-open' },
-    alwaysShow: true,
     children: [
       {
-        path: 'mock-test',
-        component: () => import('@/views/example/mock-test/MockTest.vue'),
-        name: 'MockTest',
-        meta: { title: 'Mock-Demo' }
+        path: 'hospitalManage',
+        name: 'HospitalManage',
+        component: () => import('@/views/hospitalManage/index.vue'),
+        meta: { title: '医院管理', icon: 'yiyuanguanli' }
+      }
+    ]
+  },
+  {
+    path: '/',
+    component: Layout,
+    children: [
+      {
+        path: 'departmentManage',
+        name: 'DepartmentManage',
+        component: () => import('@/views/departmentManage/index.vue'),
+        meta: { title: '科室管理', icon: 'quanke' }
       }
     ]
   },
   {
     path: '/example',
     component: Layout,
-    redirect: '/example/table',
     name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    meta: { title: '示例', icon: 'other' },
     children: [
       {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index.vue'),
-        meta: { title: 'Table', icon: 'table' }
+        meta: { title: 'Table', icon: 'other' }
       },
       {
         path: 'tree',
         name: 'Tree',
         component: () => import('@/views/tree/index.vue'),
-        meta: { title: 'Tree', icon: 'tree' }
+        meta: { title: 'Tree', icon: 'neirong' }
       }
     ]
   }
@@ -91,7 +99,7 @@ export const asyncRoutes = [
     name: 'Permission',
     meta: {
       title: 'Permission',
-      icon: 'lock',
+      icon: 'shangpinguanli',
       roles: ['admin', 'editor'] // you can set roles in root nav
     },
     children: [

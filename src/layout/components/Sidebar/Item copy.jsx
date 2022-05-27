@@ -22,16 +22,21 @@ export default defineComponent({
   setup(props) {
     /*此处写法像极了react*/
     const renderItem = () => {
-      if (props.meta?.icon) {
-        // console.log('我进入渲染了')
-        // return <svg-icon icon-class={props.meta?.icon} className="nav-icon" />
-        let iconClass = `iconfont icon-${props.meta?.icon}`
-        return <i class={iconClass}/>
+      if (props.meta?.elSvgIcon) {
+        //using element-plus svg icon
+        // element-plus remove el-icon,using 'svg icon'  to replace
+        // view https://element-plus.org/zh-CN/component/icon.html
+        return <ElSvgItem elSvgName={props.meta.elSvgIcon} />
+      } else if (props.meta?.icon) {
+        //console.log('我进入渲染了')
+        return <svg-icon icon-class={props.meta?.icon} className="nav-icon" />
       }
     }
     return () => {
       return renderItem()
     }
-
+    // return () => (
+    //   <div>{renderItem()}</div>
+    // )
   }
 })
