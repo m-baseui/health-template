@@ -1,6 +1,6 @@
 import path, { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
-// import legacy from '@vitejs/plugin-legacy'
+
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import viteSvgIcons from 'vite-plugin-svg-icons'
 
@@ -26,21 +26,10 @@ import AutoImport from 'unplugin-auto-import/vite'
 import setting from './src/settings'
 // import { loadEnv } from 'vite'
 const prodMock = setting.openProdMock
-// import packageJson from './package.json'
+
 
 export default ({ command, mode }) => {
-  /*
-   console.log(command, mode)
-  * serve serve-dev
-  * */
   return {
-    /*
-     * "/vue3-admin-plus" nginx deploy folder
-     * detail to look https://vitejs.cn/config/#base
-     * how to config, such as http://8.135.1.141/vue3-admin-plus/#/dashboard
-     * "/vue3-admin-plus/" --> config to base is you need
-     * http://8.135.1.141 --> if you config "/" , you can visit attached  to http://8.135.1.141
-     * */
     base: setting.viteBasePath,
     //define global var
     define: {
@@ -78,10 +67,7 @@ export default ({ command, mode }) => {
         // refTransform: true // 开启ref转换 还是实验性   use example for $ref
       }),
       vueJsx(),
-      // legacy({
-      //   targets: ['ie >= 11'],
-      //   additionalLegacyPolyfills: ['regenerator-runtime/runtime']
-      // }),
+
       viteSvgIcons({
         // config svg dir that can config multi
         iconDirs: [path.resolve(process.cwd(), 'src/icons/common'), path.resolve(process.cwd(), 'src/icons/nav-bar')],

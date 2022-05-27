@@ -1,4 +1,4 @@
-# vue3-admin-template
+# health-template
 
 ## Build Setup
 
@@ -7,15 +7,13 @@
 git clone https://github.com/m-baseui/health-template.git
 
 # enter the project directory
-cd vue3-admin-template
+cd health-template
 
-# pnpm address https://pnpm.io/zh/motivation
-# install dependency(Recommend use pnpm)
-# you can  use "npm -g i pnpm" to install pnpm 
-pnpm i
+# install dependency
+npm install
 
 # develop
-pnpm run dev
+npm run dev
 ```
 
 using the browser to open http://localhost:5001
@@ -24,20 +22,20 @@ using the browser to open http://localhost:5001
 
 ```bash
 # build for test environment
-pnpm run build-test
+npm run build-test
 
 # build for production environment
-pnpm run  build
+npm run  build
 ```
 
 ## Others
 
 ```bash
 # preview the release environment effect
-pnpm run preview
+npm run preview
 
 # code format check
-pnpm run lint
+npm run lint
 
 ```
 
